@@ -16,3 +16,5 @@ pip install -r requirements.txt
 
 python anti_clipper.py
 ```
+warning:
+notification can stack but these will clear. to avoid this you can kill the code by killing the python process/s within task manager then restart the installed file in roaming folder
