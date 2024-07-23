@@ -2,6 +2,7 @@ import win10toast
 import winreg
 import shutil
 import time
+import sys
 import os
 
 appdata_path = os.environ['APPDATA']
@@ -13,7 +14,7 @@ class anti_raccoon:
         while True:
             persistance_dir = os.listdir(appdata_path)
             if "Storage0" in persistance_dir and "CLPPTH" in persistance_dir:
-                toaster.show_toast("Anti Crypto Clipper",f"Raccoon Clipper detected in {appdata_path} - folders Storage0 and CLPPTH", duration=10)
+                toaster.show_toast("Anti Crypto Clipper", f"Raccoon Clipper detected in {appdata_path} - folders Storage0 and CLPPTH", duration=10)
             time.sleep(1) #can be adjusted to check more frequently. currently 1 second
 
 def add_to_startup():
@@ -30,6 +31,8 @@ def add_to_startup():
             winreg.SetValueEx(reg_key, "Anti Crypto Clipper", 0, winreg.REG_SZ, startup_script)
 
     print("Script added to startup, will run after restart.")
+    input("press enter to exit")
+    sys.exit()
 def first_check():
     add_startup = input("Would you like to add the script to startup? (y/n): ").strip().lower()
     if add_startup == "y":
