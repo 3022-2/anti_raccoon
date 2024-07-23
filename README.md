@@ -16,5 +16,8 @@ pip install -r requirements.txt
 
 python anti_clipper.py
 ```
+future features:
+- more in depth checking (files within the CLPPTH and Storage0 to verify 100% they come from [raccoon clipper](https://github.com/3022-2/raccoon_clipper))
+
 warning:  
 notification can stack but these will clear. to avoid this you can kill the code by killing the python process/s within task manager then restart the installed file in roaming folder
