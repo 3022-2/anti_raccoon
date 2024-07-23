@@ -14,7 +14,7 @@ class anti_raccoon:
         while True:
             persistance_dir = os.listdir(appdata_path)
             if "Storage0" in persistance_dir and "CLPPTH" in persistance_dir:
-                toaster.show_toast("Anti Crypto Clipper", f"Raccoon Clipper detected in {appdata_path} - folders Storage0 and CLPPTH", duration=10)
+                toaster.show_toast("Anti Crypto Clipper", f"Raccoon Clipper detected in {appdata_path} - folders Storage0 and CLPPTH")
             time.sleep(1) #can be adjusted to check more frequently. currently 1 second
 
 def add_to_startup():
@@ -37,6 +37,10 @@ def first_check():
     add_startup = input("Would you like to add the script to startup? (y/n): ").strip().lower()
     if add_startup == "y":
         add_to_startup()
+    else:
+        print("Exiting...")
+        time.sleep(2)
+        sys.exit()
 
 if __name__ == "__main__":
     if os.name == "nt":
