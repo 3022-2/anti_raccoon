@@ -15,6 +15,7 @@ class anti_raccoon:
             persistance_dir = os.listdir(appdata_path)
             if "Storage0" in persistance_dir and "CLPPTH" in persistance_dir:
                 toaster.show_toast("Anti Crypto Clipper", f"Raccoon Clipper detected in {appdata_path} - folders Storage0 and CLPPTH")
+                #notification may stack, might fix this however its not a pressing issue at the moment
             time.sleep(1) #can be adjusted to check more frequently. currently 1 second
 
 def add_to_startup():
